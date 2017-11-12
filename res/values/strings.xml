@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">SHotSpotSetting</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    
+    <string-array name="hotspot_type">
+        <item name = "kaifang">开放式热点</item>
+        <item name = "WPA2PSK">WPA2 PSK</item>
+    </string-array>
+        
+</resources>

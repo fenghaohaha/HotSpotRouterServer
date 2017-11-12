@@ -1,0 +1,212 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.haofeng.preresearch.shotspotsetting.MainActivity" >
+
+    <LinearLayout
+        android:id="@+id/ll_hotspot_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tv_hotspot_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="路由猫"
+            android:textSize="30dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="4dp"
+            android:background="#101010" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_hotspot_setting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ll_hotspot_title"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/hotspot_setting"
+        android:orientation="vertical"
+        android:paddingBottom="25dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="25dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="热点名称:"
+                android:textSize="@dimen/hotspot_setting_text_size" />
+
+            <EditText
+                android:id="@+id/et_hotspot_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="输入热点名称"
+                android:scrollbars="horizontal"
+                android:singleLine="true" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_hotspot_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="密\u3000\u3000码:"
+                android:textSize="@dimen/hotspot_setting_text_size" />
+
+            <EditText
+                android:id="@+id/et_hotspot_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="输入热点密码"
+                android:inputType="textPassword"
+                android:scrollbars="horizontal"
+                android:singleLine="true" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="类\u3000\u3000型:"
+                android:textSize="@dimen/hotspot_setting_text_size" />
+
+            <Spinner
+                android:id="@+id/sp_hotspot_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/hotspot_type" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_service_server"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ll_hotspot_setting"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal"
+        android:paddingBottom="2dp" >
+
+        <TextView
+            android:id="@+id/tv_hotspot_msg"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:scrollbars="vertical" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/blue" />
+
+        <TextView
+            android:id="@+id/tv_hotspot_server"
+            android:layout_width="0dp"
+            android:layout_marginLeft="3dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:scrollbars="vertical" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/ll_service_server"
+        android:background="@color/blue" />
+
+    <ScrollView
+        android:id="@+id/sv_state_msg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/ll_operation"
+        android:layout_below="@id/ll_service_server" >
+
+        <TextView
+            android:id="@+id/tv_state_log"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical"
+            android:text="日志信息：\n" />
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/ll_operation"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="25dp"
+        android:layout_marginLeft="33dp"
+        android:layout_marginRight="33dp"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/bt_start_hostspot"
+                style="@style/btn_style"
+                android:text="开启热点" />
+
+            <Button
+                android:id="@+id/bt_close_hostspot"
+                style="@style/btn_style"
+                android:text="关闭热点"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="5dp"
+            android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/bt_start_hostspot_server"
+                style="@style/btn_style"
+                android:text="开启服务" />
+
+            <Button
+                android:id="@+id/bt_close_hostspot_server"
+                style="@style/btn_style"
+                android:text="关闭服务"
+                android:visibility="gone" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
